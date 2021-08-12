@@ -47,28 +47,28 @@ while n:
 
       if r > 8 or r == 0:
 
-        print('FRIDAY')
+        print('SEXTA')
 
       elif r > 6:
 
-        print('THURSDAY')
+        print('QUINTA')
 
       elif r > 4:
 
-        print('WEDNESDAY')
+        print('QUARTA')
 
       elif r > 2:
 
-        print('TUESDAY')
+        print('TERCA')
 
       else:
 
-        print('MONDAY')
+        print('SEGUNDA')
 
     except:
 
-      print('FAILURE')
+      print('FALHA')
 
   else:
 
-    print('FAILURE')
+    print('FALHA')
