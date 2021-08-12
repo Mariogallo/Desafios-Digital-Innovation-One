@@ -19,22 +19,78 @@ Exemplo de Entrada	Exemplo de Saída
 
 Minha Solução
 
-valores = input().split()
-valores = list(map(int,valores))
+x = input().split()
 
-a, b, c, d = valores
-    
-inicio = a*60 + b
-final = c*60 + d
-duracao = 0
+hi, mi, hf, mf = x
 
-if(a <= c):
-    duracao = final - inicio
-    if(duracao == 0):
-        print("O JOGO DUROU %d HORA(S) E %d MINUTO(S)" %(24,duracao%60))
-    else:
-        print("O JOGO DUROU %d HORA(S) E %d MINUTO(S)" %((duracao - duracao%60)/60,duracao%60))
-else:
-    duracao = (24*60 - inicio) + final
-    print("O JOGO DUROU %d HORA(S) E %d MINUTO(S)" %((duracao - duracao%60)/60,duracao%60))
 
+
+hi = int(x[0])
+
+mi = int(x[1])
+
+hf = int(x[2])
+
+mf = int(x[3])
+
+
+
+if hi < hf:
+
+  h = hf - hi
+
+  if mi < mf:
+
+    m = mf - mi
+
+  if mi > mf:
+
+    h = h - 1
+
+    m = (60 - mi) + mf
+
+  if mi == mf:
+
+    m = 0
+
+if hi > hf:
+
+  h = (24 - hi) + hf
+
+  if mi < mf:
+
+    m = mf - mi
+
+  if mi > mf:
+
+    h = h - 1
+
+    m = (60 - mi) + mf
+
+  if mi == mf:
+
+    m = 0
+
+if hi == hf:
+
+  if mi < mf:
+
+    m = mf - mi
+
+    h = 0
+
+  if mi > mf:
+
+    m = (60 - mi) + mf
+
+    h = 23
+
+  if mi == mf:
+
+    h = 24
+
+    m = 0
+
+   
+
+print('O JOGO DUROU {} HORA(S) E {} MINUTO(S)'.format(h, m))
